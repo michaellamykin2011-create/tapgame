@@ -8,29 +8,98 @@
     android:background="@drawable/background_gradient"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:id="@+id/menuButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <ImageButton
+        android:id="@+id/shopButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_shop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/menuButton"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/highScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Рекорд: 0"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:shadowColor="@color/black"
+        android:shadowDy="1"
+        android:shadowDx="1"
+        android:shadowRadius="2"
+        app:layout_constraintEnd_toStartOf="@+id/shopButton"
+        app:layout_constraintStart_toEndOf="@+id/menuButton"
+        app:layout_constraintTop_toTopOf="@+id/menuButton"
+        app:layout_constraintBottom_toBottomOf="@+id/menuButton"/>
+
     <TextView
         android:id="@+id/counterTextView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:gravity="center"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
         android:text="0"
         android:textColor="@color/text_on_glass"
         android:textSize="90sp"
         android:textStyle="bold"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.4" />
 
+    <LinearLayout
+        android:id="@+id/comboLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/counterTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_combo_fire"/>
+
+        <TextView
+            android:id="@+id/comboTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Комбо x2"
+            android:textColor="#FF9800"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+
     <TextView
         android:id="@+id/victoryTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="ТЫ ПОБЕДИЛ!"
         android:textColor="@color/turquoise_bright"
         android:textSize="48sp"
@@ -40,7 +109,6 @@
         android:shadowDy="2"
         android:shadowDx="2"
         android:shadowRadius="4"
-        app:layout_constraintBottom_toTopOf="@+id/clickButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/counterTextView" />
@@ -53,7 +121,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="80dp"
         android:background="@drawable/glass_panel_background"
-        android:text="КЛИК!"
+        android:text="КЛИК"
         android:textColor="@color/text_on_glass"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,5 +143,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/goldenBonus"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_golden_bonus"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
