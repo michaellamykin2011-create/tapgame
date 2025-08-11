@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="turquoise_bright">#00E5FF</color>
+    <color name="text_on_glass">#FFFFFF</color>
 </resources>
